@@ -4,7 +4,7 @@
 #
 Name     : pypi-execnet
 Version  : 1.9.0
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Summary  : execnet: rapid multi-Python deployment
@@ -14,15 +14,12 @@ Requires: pypi-execnet-license = %{version}-%{release}
 Requires: pypi-execnet-python = %{version}-%{release}
 Requires: pypi-execnet-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: execnet
-Provides: execnet-python
-Provides: execnet-python3
-BuildRequires : pypi(pluggy)
-BuildRequires : py-python
+BuildRequires : pypi(py)
 BuildRequires : pypi(setuptools_scm)
-BuildRequires : pytest
-BuildRequires : tox
-BuildRequires : pypi(virtualenv)
+BuildRequires : pypi-pluggy
+BuildRequires : pypi-pytest
+BuildRequires : pypi-tox
+BuildRequires : pypi-virtualenv
 
 %description
 ========================================================
@@ -69,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641434942
+export SOURCE_DATE_EPOCH=1649694888
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
