@@ -4,7 +4,7 @@
 #
 Name     : pypi-execnet
 Version  : 1.9.0
-Release  : 76
+Release  : 77
 URL      : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Summary  : execnet: rapid multi-Python deployment
