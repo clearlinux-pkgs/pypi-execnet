@@ -4,7 +4,7 @@
 #
 Name     : pypi-execnet
 Version  : 1.9.0
-Release  : 79
+Release  : 80
 URL      : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7a/3c/b5ac9fc61e1e559ced3e40bf5b518a4142536b34eb274aa50dff29cb89f5/execnet-1.9.0.tar.gz
 Summary  : execnet: rapid multi-Python deployment
@@ -20,6 +20,9 @@ BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
 BuildRequires : pypi-virtualenv
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 ========================================================
@@ -69,12 +72,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656406154
+export SOURCE_DATE_EPOCH=1672270744
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$FFLAGS -fno-lto "
-export FFLAGS="$FFLAGS -fno-lto "
-export CXXFLAGS="$CXXFLAGS -fno-lto "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -91,7 +94,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-execnet
-cp %{_builddir}/execnet-1.9.0/LICENSE %{buildroot}/usr/share/package-licenses/pypi-execnet/82dbfd684f7c04da81d4faa852c6317142daa3e7
+cp %{_builddir}/execnet-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-execnet/82dbfd684f7c04da81d4faa852c6317142daa3e7 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
