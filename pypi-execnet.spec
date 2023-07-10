@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-execnet
-Version  : 2.0.0
-Release  : 82
-URL      : https://files.pythonhosted.org/packages/4f/bf/3aeb4f24c300b992d4e9db7ec1a6977c1fe1be16fef879a9f24e7b43fc1e/execnet-2.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/4f/bf/3aeb4f24c300b992d4e9db7ec1a6977c1fe1be16fef879a9f24e7b43fc1e/execnet-2.0.0.tar.gz
+Version  : 2.0.2
+Release  : 83
+URL      : https://files.pythonhosted.org/packages/e4/c8/d382dc7a1e68a165f4a4ab612a08b20d8534a7d20cc590630b734ca0c54b/execnet-2.0.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e4/c8/d382dc7a1e68a165f4a4ab612a08b20d8534a7d20cc590630b734ca0c54b/execnet-2.0.2.tar.gz
 Summary  : execnet: rapid multi-Python deployment
 Group    : Development/Tools
 License  : MIT
@@ -17,6 +17,11 @@ Requires: pypi-execnet-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(hatch_vcs)
 BuildRequires : pypi(hatchling)
+BuildRequires : pypi(py)
+BuildRequires : pypi-pluggy
+BuildRequires : pypi-pytest
+BuildRequires : pypi-tox
+BuildRequires : pypi-virtualenv
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -53,10 +58,10 @@ python3 components for the pypi-execnet package.
 
 
 %prep
-%setup -q -n execnet-2.0.0
-cd %{_builddir}/execnet-2.0.0
+%setup -q -n execnet-2.0.2
+cd %{_builddir}/execnet-2.0.2
 pushd ..
-cp -a execnet-2.0.0 buildavx2
+cp -a execnet-2.0.2 buildavx2
 popd
 
 %build
@@ -64,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688743848
+export SOURCE_DATE_EPOCH=1689002559
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
