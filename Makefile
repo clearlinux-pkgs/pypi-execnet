@@ -1,5 +1,5 @@
 PKG_NAME := pypi-execnet
-URL = https://files.pythonhosted.org/packages/e4/c8/d382dc7a1e68a165f4a4ab612a08b20d8534a7d20cc590630b734ca0c54b/execnet-2.0.2.tar.gz
+URL = https://files.pythonhosted.org/packages/66/c6/14bd4bd2db833ebc90ebdaf4af21ea6e672e92725e03bc91683e2e08af8d/execnet-2.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
