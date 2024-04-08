@@ -6,10 +6,10 @@
 # autospec commit: f56f1fa
 #
 Name     : pypi-execnet
-Version  : 2.1.0
-Release  : 86
-URL      : https://files.pythonhosted.org/packages/66/c6/14bd4bd2db833ebc90ebdaf4af21ea6e672e92725e03bc91683e2e08af8d/execnet-2.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/66/c6/14bd4bd2db833ebc90ebdaf4af21ea6e672e92725e03bc91683e2e08af8d/execnet-2.1.0.tar.gz
+Version  : 2.1.1
+Release  : 87
+URL      : https://files.pythonhosted.org/packages/bb/ff/b4c0dc78fbe20c3e59c0c7334de0c27eb4001a2b2017999af398bf730817/execnet-2.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/bb/ff/b4c0dc78fbe20c3e59c0c7334de0c27eb4001a2b2017999af398bf730817/execnet-2.1.1.tar.gz
 Summary  : execnet: rapid multi-Python deployment
 Group    : Development/Tools
 License  : MIT
@@ -60,10 +60,10 @@ python3 components for the pypi-execnet package.
 
 
 %prep
-%setup -q -n execnet-2.1.0
-cd %{_builddir}/execnet-2.1.0
+%setup -q -n execnet-2.1.1
+cd %{_builddir}/execnet-2.1.1
 pushd ..
-cp -a execnet-2.1.0 buildavx2
+cp -a execnet-2.1.1 buildavx2
 popd
 
 %build
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1712450211
+export SOURCE_DATE_EPOCH=1712587313
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
