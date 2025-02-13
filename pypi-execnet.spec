@@ -7,7 +7,7 @@
 #
 Name     : pypi-execnet
 Version  : 2.1.1
-Release  : 88
+Release  : 89
 URL      : https://files.pythonhosted.org/packages/bb/ff/b4c0dc78fbe20c3e59c0c7334de0c27eb4001a2b2017999af398bf730817/execnet-2.1.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bb/ff/b4c0dc78fbe20c3e59c0c7334de0c27eb4001a2b2017999af398bf730817/execnet-2.1.1.tar.gz
 Summary  : execnet: rapid multi-Python deployment
